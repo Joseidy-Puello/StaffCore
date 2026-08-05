@@ -13,11 +13,16 @@ namespace StaffCore.Data
     {
         public StaffDbContext(DbContextOptions<StaffDbContext> options) : base(options) { }
 
+
         public DbSet<Staff> Personal { get; set; }
 
         protected override void OnModelCreating(ModelBuilder mb)
         {
             base.OnModelCreating(mb);
+
+            mb.Entity<Staff>()
+             .Property(s => s.Salario)
+             .HasPrecision(18, 2); // 18 dígitos, 2 decimales
 
             mb.Entity<Staff>().HasData(
                 new Staff { Id = 1, Nombre = "Juan Pérez", Cedula = "001-1234567-8", Cargo = "Analista de Sistemas", Departamento = "Tecnología", Salario = 25000, FechaIngreso = DateTime.Now },
