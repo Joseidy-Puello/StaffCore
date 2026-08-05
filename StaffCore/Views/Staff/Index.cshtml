@@ -1,0 +1,38 @@
+﻿@model IEnumerable<StaffCore.Models.Staff>
+
+<h2>Lista de Empleados</h2>
+<p>
+    <a asp-action="Create" class="btn btn-primary">Agregar Nuevo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Cédula</th>
+            <th>Cargo</th>
+            <th>Departamento</th>
+            <th>Salario</th>
+            <th>Fecha Ingreso</th>
+            <th>Activo</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Nombre</td>
+                <td>@item.Cedula</td>
+                <td>@item.Cargo</td>
+                <td>@item.Departamento</td>
+                <td>@item.Salario</td>
+                <td>@item.FechaIngreso.ToShortDateString()</td>
+                <td>@item.Activo</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
