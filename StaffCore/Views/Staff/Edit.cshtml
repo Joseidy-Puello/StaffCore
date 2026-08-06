@@ -4,32 +4,32 @@
 
 <form asp-action="Edit" method="post">
     <input type="hidden" asp-for="Id" />
-    <div class="form-group">
-        <label asp-for="Nombre"></label>
+    <div class="form-check">
+        <label asp-for="Nombre" class="form-check-label">></label>
         <input asp-for="Nombre" class="form-control" />
     </div>
-    <div class="form-group">
-        <label asp-for="Cedula"></label>
+    <div class="form-check">
+        <label asp-for="Cedula" class="form-check-label">></label>
         <input asp-for="Cedula" class="form-control" />
     </div>
-    <div class="form-group">
-        <label asp-for="Cargo"></label>
+    <div class="form-check">
+        <label asp-for="Cargo" class="form-check-label">></label>
         <input asp-for="Cargo" class="form-control" />
     </div>
-    <div class="form-group">
-        <label asp-for="Departamento"></label>
+    <div class="form-check">
+        <label asp-for="Departamento" class="form-check-label">></label>
         <input asp-for="Departamento" class="form-control" />
     </div>
-    <div class="form-group">
-        <label asp-for="Salario"></label>
+    <div class="form-check">
+        <label asp-for="Salario" class="form-check-label">></label>
         <input asp-for="Salario" class="form-control" />
     </div>
-    <div class="form-group">
-        <label asp-for="FechaIngreso"></label>
+    <div class="form-check">
+        <label asp-for="FechaIngreso" class="form-check-label">></label>
         <input asp-for="FechaIngreso" type="date" class="form-control" />
     </div>
-    <div class="form-group">
-        <label asp-for="Activo"></label>
+    <div class="form-check">
+        <label asp-for="Activo" class="form-check-label"></label>
         <input asp-for="Activo" type="checkbox" />
     </div>
     <button type="submit" class="btn btn-primary">Actualizar</button>

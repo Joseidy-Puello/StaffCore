@@ -100,5 +100,18 @@ namespace StaffCore.Controllers
             }
             return RedirectToAction(nameof(Index));
         }
+
+        // GET: Staff/Details/5
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null) return NotFound();
+
+            var staff = await _context.Personal.FirstOrDefaultAsync(m => m.Id == id);
+            if (staff == null) return NotFound();
+
+            return View(staff);
+        }
+
     }
+
 }
